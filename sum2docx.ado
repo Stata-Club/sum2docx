@@ -15,7 +15,7 @@ program define sum2docx
 	}
 
 	syntax varlist(numeric) [if] [in] [aweight fweight iweight/] using/, [append replace title(string) ///
-	stats(string asis) note(string) pagesize(string) font(string) landscape]
+		stats(string asis) note(string) pagesize(string) font(string) landscape]
 
 	marksample touse, novarlist
 	qui count if `touse'
@@ -109,7 +109,7 @@ program define sum2docx
 			putdocx save `"`using'"', `replace'`append'
 		}
 	}
-	di as txt `"summary statistics have been written to file {browse `using'}"'
+	di as txt `"summary statistics have been written to file {browse "`using'"}"'
 end
 
 mata
